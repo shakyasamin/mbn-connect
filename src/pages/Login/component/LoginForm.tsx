@@ -1,16 +1,26 @@
+import Button from "@/components/button/Button";
 import Input from "@/components/input/Input";
-import PinInput from "@/components/input/PasswordInput";
+import PasswordInput from "@/components/input/PasswordInput";
 import { ILoginModel } from "@/model/authModel";
 import { useForm } from "react-hook-form";
 
 function LoginForm() {
   const {
+    handleSubmit,
     register,
     formState: { errors },
-  } = useForm<ILoginModel>();
+  } = useForm<ILoginModel>({
+    defaultValues: { email: "test@gmail.com", password: "Mypassword1!" },
+  });
 
+  const handleSubmits = () => {
+    console.log("submitted");
+  };
   return (
-    <form className="flex w-full flex-col gap-6">
+    <form
+      className="flex w-full flex-col gap-6"
+      onSubmit={handleSubmit(handleSubmits)}
+    >
       <Input
         id="email"
         label="Email"
@@ -27,7 +37,7 @@ function LoginForm() {
           },
         })}
       </Input>
-      <PinInput
+      <PasswordInput
         id="password"
         label="Password"
         placeholder="Enter you password"
@@ -42,7 +52,19 @@ function LoginForm() {
           },
           setValueAs: (value) => (value ? value.trim() : ""),
         })}
-      </PinInput>
+      </PasswordInput>
+      <div className=" flex justify-between">
+        <div>
+          <input type="checkbox" id="remember" />
+          <label htmlFor="remember" className="ml-2 font-medium text-base">
+            Remember me
+          </label>
+        </div>
+        <button className="font-medium text-base text-primary-500">
+          Forgot password?
+        </button>
+      </div>
+      <Button type="submit" title=" Sign In" />
     </form>
   );
 }

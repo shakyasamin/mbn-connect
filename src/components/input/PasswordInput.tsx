@@ -28,14 +28,14 @@ function PasswordInput({
 }: IInput) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  const showPinHandler = () => {
+  const showPasswordHandler = () => {
     setShowPassword((prev) => !prev);
   };
 
   return (
-    <div>
+    <div className="flex w-full flex-col gap-1 self-start text-base">
       <section className="flex gap-1">
-        <label htmlFor={id} className="fw-semibold font-[600] tracking-wide">
+        <label htmlFor={id} className="font-semibold tracking-wide">
           {label}&nbsp;
           {isRequired && <RequiredIcon />}
         </label>
@@ -43,11 +43,11 @@ function PasswordInput({
         <InvalidMessage toShow={haveError} message={errorMessage} />
       </section>
 
-      <section className="flex items-center justify-center rounded-md border border-gray-300 px-[0.75rem] py-[0.3rem] text-center focus-within:border-primary-500">
+      <section className="flex items-center justify-center rounded-md border border-gray-300  px-3 py-[0.375rem] text-center focus-within:border-primary-500">
         <input
           id={id}
           placeholder={placeholder}
-          className="w-full border-none bg-[#FFFFFF] p-0 focus:outline-none"
+          className="w-full outline-none p-0 focus:outline-none"
           type={showPassword ? type : "password"}
           {...children}
         />
@@ -55,7 +55,7 @@ function PasswordInput({
         <i
           role="button"
           className="cursor-pointer text-lg"
-          onClick={showPinHandler}
+          onClick={showPasswordHandler}
         >
           {showPassword ? <BsEye /> : <BsEyeSlash />}
         </i>

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { UseFormRegisterReturn } from "react-hook-form";
 
-import InvalidMessage from "../error/InvalidMessage";
 import RequiredIcon from "@/RequiredIcon";
+import InvalidMessage from "../error/InvalidMessage";
 
 interface IInput {
   label: string;

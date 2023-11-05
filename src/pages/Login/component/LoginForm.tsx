@@ -53,7 +53,7 @@ function LoginForm() {
           setValueAs: (value) => (value ? value.trim() : ""),
         })}
       </PasswordInput>
-      <div className=" flex justify-between">
+      <div className="flex justify-between">
         <div>
           <input type="checkbox" id="remember" />
           <label htmlFor="remember" className="ml-2 font-medium text-base">
@@ -64,7 +64,7 @@ function LoginForm() {
           Forgot password?
         </button>
       </div>
-      <Button type="submit" title=" Sign In" />
+      <Button type="submit" title="Sign In" />
     </form>
   );
 }

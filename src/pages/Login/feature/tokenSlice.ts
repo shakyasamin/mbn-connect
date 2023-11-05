@@ -28,10 +28,10 @@ const tokenSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(verifyToken.pending, (state, _) => {
+      .addCase(verifyToken.pending, (state) => {
         state.status = Status.Loading;
       })
-      .addCase(verifyToken.fulfilled, (state, _) => {
+      .addCase(verifyToken.fulfilled, (state) => {
         state.status = Status.Succeeded;
       })
       .addCase(verifyToken.rejected, (state, action) => {

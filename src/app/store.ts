@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import tokenReducer from "@/pages/Login/feature/tokenSlice";
+import currentUserReducer from "@/pages/Login/feature/loginSlice";
 
 export const store = configureStore({
   reducer: {
+    currentUser: currentUserReducer,
     token: tokenReducer,
   },
 });

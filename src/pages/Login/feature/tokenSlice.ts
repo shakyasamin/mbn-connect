@@ -1,5 +1,5 @@
-import { AuthApi } from "@/api/service/authApi";
 import { Status } from "@/enum/common";
+import { AuthApi } from "@/api/service/authApi";
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface TokenState {

@@ -1,6 +1,6 @@
-import { ILoginModel, ITokenModel } from "@/model/authModel";
 import axios from "axios";
 import { API_URL } from "../constant";
+import { ILoginModel, ITokenModel } from "@/model/authModel";
 
 export const AuthApi = {
   login: (body: ILoginModel) => {

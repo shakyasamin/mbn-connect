@@ -9,7 +9,7 @@ import { ILoginResponseModel } from "@/model/authModel";
 interface CurrentUserState {
   loginResponseModel: ILoginResponseModel | null;
   status: Status;
-  error?: string;
+  error?: unknown;
 }
 
 const initialState: CurrentUserState = {
@@ -55,5 +55,4 @@ const loginSlice = createSlice({
 export default loginSlice.reducer;
 
 export const { setCurrentUserStatus } = loginSlice.actions;
-export const getUserStatus = (state: RootState) =>
-  state.currentUser.loginResponseModel;
+export const getUserStatus = (state: RootState) => state.currentUser.loginResponseModel;

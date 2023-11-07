@@ -7,6 +7,7 @@ export const loginUser = createAsyncThunk(
   async (loginModel: ILoginModel, { rejectWithValue }) => {
     try {
       const response = await AuthApi.login(loginModel);
+      console.log(response.data);
       return response.data;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
